@@ -63,7 +63,7 @@ const Hero = () => {
         {/* ========================================= */}
         <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative h-full">
           {/* Main ne yahan end par 'translate-y-[50px]' add kiya hai, baqi sab same hai */}
-          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[90px]">
+          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[60px]">
             <img
               src={gtImage}
               alt="Oxege GT Design"
