@@ -62,15 +62,13 @@ const Hero = () => {
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
         <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative h-full">
-          {/* Width aur mask wapis le aaye, sirf container ka bottom align kiya hai */}
-          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8">
+          {/* Main ne yahan end par 'translate-y-[50px]' add kiya hai, baqi sab same hai */}
+          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[50px]">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              /* Object-contain aur h-auto wapis lagaya taake original shape aur mix-blend theek rahay */
               className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
               style={{
-                /* Wahi purana fade mask jo kinaron ko white mein dissolve karta hai */
                 maskImage:
                   "radial-gradient(ellipse at center, black 50%, transparent 100%)",
                 WebkitMaskImage:
