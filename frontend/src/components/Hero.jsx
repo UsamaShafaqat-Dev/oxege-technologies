@@ -6,7 +6,7 @@ import gtImage from "../assets/images.png";
 
 const Hero = () => {
   return (
-    <div className="relative w-full overflow-hidden py-16 lg:py-20 font-sans bg-white min-h-[85vh] flex items-center">
+    <div className="relative w-full overflow-hidden pt-4 pb-16 lg:pt-6 lg:pb-20 font-sans bg-white min-h-[85vh] flex items-center">
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-white via-white to-gray-50"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center relative z-10">
@@ -62,12 +62,13 @@ const Hero = () => {
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
         <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative h-full">
-          {/* Main ne yahan end par 'translate-y-[50px]' add kiya hai, baqi sab same hai */}
-          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[60px]">
+          {/* CHANGE 1: Yahan se translate-y bilkul HATA diya hai aur 'h-full' lagaya hai taake picture kate nahi */}
+          <div className="relative w-full h-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
+              /* CHANGE 2: 'h-auto' ki jagah 'h-full' aur 'object-bottom' lagaya hai. Is se poori picture bina kate bottom line par baith jayegi */
+              className="w-full h-full object-contain object-bottom mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
               style={{
                 maskImage:
                   "radial-gradient(ellipse at center, black 50%, transparent 100%)",
