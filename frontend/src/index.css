@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* Oxege Technologies - Official Brand Color Palette */
+  --color-primary: #00d9ff; /* Bright Tech Cyan */
+  --color-secondary: #38e0ff; /* Soft Cyan */
+  --color-dark: #001e26; /* Deep Navy for Dark Sections */
+  --color-dark-teal: #003b46; /* Main Brand Dark */
+  --color-light: #f8fafc; /* Off White for Light Backgrounds */
+  --color-white: #ffffff; /* Pure White for Cards/Content */
+  --color-text: #0f172a; /* Heading/Dark Text Color */
+  --color-gray: #64748b; /* Paragraph Gray Color */
+  --color-border: #e2e8f0; /* Light Border Color */
+}
+
+body {
+  /* Base settings as per your recommendation */
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
