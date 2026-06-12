@@ -63,11 +63,12 @@ const Hero = () => {
         {/* ========================================= */}
         <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end order-1 lg:order-2 w-full relative">
           {/* Container thora bara rakha hai taake design poora show ho */}
-          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-center justify-center lg:translate-x-8">
+          {/* Yahan hum ne height fix karne ke liye h-[450px] aur lg:h-[550px] laga diya hai */}
+          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] h-[450px] lg:h-[550px] flex items-center justify-center lg:translate-x-8">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              /* 'h-auto' aur 'object-contain' ki jagah 'h-full', 'object-cover' aur 'object-top' lagaya hai taake height bottom se match ho */
+              /* Image ko object-cover aur object-top rakha hai taake neechay tak stretch ho */
               className="w-full h-full object-cover object-top mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
             />
           </div>
