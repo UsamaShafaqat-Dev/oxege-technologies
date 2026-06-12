@@ -61,19 +61,20 @@ const Hero = () => {
         {/* ========================================= */}
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
-        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative h-full">
-          {/* CHANGE 1: Yahan se translate-y bilkul HATA diya hai aur 'h-full' lagaya hai taake picture kate nahi */}
-          <div className="relative w-full h-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8">
+        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative">
+          {/* Main ne yahan translate-y-[40px] lagaya hai taake ye exactly line par baith jaye */}
+          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[20px] lg:translate-y-[40px]">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              /* CHANGE 2: 'h-auto' ki jagah 'h-full' aur 'object-bottom' lagaya hai. Is se poori picture bina kate bottom line par baith jayegi */
-              className="w-full h-full object-contain object-bottom mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
+              /* h-full hata kar h-auto kar diya taake picture poori apni asli shape mein khule */
+              className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
               style={{
+                /* Yahan 50% ki jagah 75% kar diya hai taake picture neechay se fade/cut na ho! */
                 maskImage:
-                  "radial-gradient(ellipse at center, black 50%, transparent 100%)",
+                  "radial-gradient(ellipse at center, black 75%, transparent 100%)",
                 WebkitMaskImage:
-                  "radial-gradient(ellipse at center, black 50%, transparent 100%)",
+                  "radial-gradient(ellipse at center, black 75%, transparent 100%)",
               }}
             />
           </div>
