@@ -15,7 +15,7 @@ const PortfolioDetail = () => {
     const fetchSingleProject = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/portfolio/${id}`,
+          `https://oxege-backend.onrender.com/api/portfolio/${id}`,
         );
         // Backend { success: true, data: project } return karta hai
         setProject(data.data);

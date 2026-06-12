@@ -61,7 +61,7 @@ const AdminDashboard = () => {
   const fetchServices = async () => {
     setLoadingServices(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/services");
+      const { data } = await axios.get("https://oxege-backend.onrender.com/api/services");
       setServices(data);
     } catch (error) {
       toast.error("Failed to load services!");
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
     try {
       if (editingServiceId) {
         await axios.put(
-          `http://localhost:5000/api/services/${editingServiceId}`,
+          `https://oxege-backend.onrender.com/api/services/${editingServiceId}`,
           data,
           { headers: { Authorization: `Bearer ${token}` } },
         );
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
       } else {
         if (!serviceFormData.image)
           return toast.error("Image is required!", { id: toastId });
-        await axios.post("http://localhost:5000/api/services", data, {
+        await axios.post("https://oxege-backend.onrender.com/api/services", data, {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success("Service added successfully!", { id: toastId });
@@ -140,7 +140,7 @@ const AdminDashboard = () => {
                 const deleteToast = toast.loading("Deleting...");
                 try {
                   await axios.delete(
-                    `http://localhost:5000/api/services/${id}`,
+                    `https://oxege-backend.onrender.com/api/services/${id}`,
                     { headers: { Authorization: `Bearer ${token}` } },
                   );
                   toast.success("Deleted!", { id: deleteToast });
@@ -166,7 +166,7 @@ const AdminDashboard = () => {
   const fetchPortfolios = async () => {
     setLoadingPortfolios(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/portfolio");
+      const { data } = await axios.get("https://oxege-backend.onrender.com/api/portfolio");
       setPortfolios(data.data);
     } catch (error) {
       toast.error("Failed to load portfolio!");
@@ -225,7 +225,7 @@ const AdminDashboard = () => {
     try {
       if (editingPortfolioId) {
         await axios.put(
-          `http://localhost:5000/api/portfolio/${editingPortfolioId}`,
+          `https://oxege-backend.onrender.com/api/portfolio/${editingPortfolioId}`,
           data,
           { headers: { Authorization: `Bearer ${token}` } },
         );
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
       } else {
         if (!portfolioFormData.image)
           return toast.error("Image required!", { id: toastId });
-        await axios.post("http://localhost:5000/api/portfolio", data, {
+        await axios.post("https://oxege-backend.onrender.com/api/portfolio", data, {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success("Project added!", { id: toastId });
@@ -267,7 +267,7 @@ const AdminDashboard = () => {
                 const deleteToast = toast.loading("Deleting...");
                 try {
                   await axios.delete(
-                    `http://localhost:5000/api/portfolio/${id}`,
+                    `https://oxege-backend.onrender.com/api/portfolio/${id}`,
                     { headers: { Authorization: `Bearer ${token}` } },
                   );
                   toast.success("Deleted!", { id: deleteToast });
@@ -293,7 +293,7 @@ const AdminDashboard = () => {
   const fetchInquiries = async () => {
     setLoadingInquiries(true);
     try {
-      const { data } = await axios.get("http://localhost:5000/api/inquiries", {
+      const { data } = await axios.get("https://oxege-backend.onrender.com/api/inquiries", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setInquiries(data.data);
@@ -308,7 +308,7 @@ const AdminDashboard = () => {
     const statusToast = toast.loading("Updating status...");
     try {
       await axios.put(
-        `http://localhost:5000/api/inquiries/${id}`,
+        `https://oxege-backend.onrender.com/api/inquiries/${id}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } },
       );
@@ -339,7 +339,7 @@ const AdminDashboard = () => {
                 const deleteToast = toast.loading("Deleting...");
                 try {
                   await axios.delete(
-                    `http://localhost:5000/api/inquiries/${id}`,
+                    `https://oxege-backend.onrender.com/api/inquiries/${id}`,
                     { headers: { Authorization: `Bearer ${token}` } },
                   );
                   toast.success("Inquiry Deleted!", { id: deleteToast });

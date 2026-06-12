@@ -17,7 +17,7 @@ const AdminLogin = () => {
     try {
       // Backend ke login route par request bhej rahe hain
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://oxege-backend.onrender.com/api/auth/login",
         {
           email,
           password,

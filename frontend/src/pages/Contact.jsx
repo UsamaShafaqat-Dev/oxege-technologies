@@ -25,7 +25,7 @@ const Contact = () => {
     const toastId = toast.loading("Sending your inquiry...");
 
     try {
-      await axios.post("http://localhost:5000/api/inquiries", formData);
+      await axios.post("https://oxege-backend.onrender.com/api/inquiries", formData);
       toast.success("Message sent successfully! We will contact you soon.", {
         id: toastId,
       });

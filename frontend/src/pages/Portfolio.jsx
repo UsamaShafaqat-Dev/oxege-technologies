@@ -11,7 +11,7 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/portfolio");
+        const { data } = await axios.get("https://oxege-backend.onrender.com/api/portfolio");
         setProjects(data.data);
       } catch (error) {
         console.error("Error fetching portfolio projects:", error);

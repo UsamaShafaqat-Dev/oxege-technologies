@@ -10,7 +10,7 @@ const ServicesSection = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/services");
+        const { data } = await axios.get("https://oxege-backend.onrender.com/api/services");
         // Home page ke liye sirf latest 4 services uthayenge
         setServices(data.slice(0, 4));
       } catch (error) {
