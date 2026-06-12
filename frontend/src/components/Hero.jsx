@@ -61,15 +61,21 @@ const Hero = () => {
         {/* ========================================= */}
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
-        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end order-1 lg:order-2 w-full relative">
-          {/* Container thora bara rakha hai taake design poora show ho */}
-          {/* Yahan hum ne height fix karne ke liye h-[450px] aur lg:h-[550px] laga diya hai */}
-          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] h-[450px] lg:h-[550px] flex items-center justify-center lg:translate-x-8">
+        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative h-full">
+          {/* Width aur mask wapis le aaye, sirf container ka bottom align kiya hai */}
+          <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              /* Image ko object-cover aur object-top rakha hai taake neechay tak stretch ho */
-              className="w-full h-full object-cover object-top mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
+              /* Object-contain aur h-auto wapis lagaya taake original shape aur mix-blend theek rahay */
+              className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
+              style={{
+                /* Wahi purana fade mask jo kinaron ko white mein dissolve karta hai */
+                maskImage:
+                  "radial-gradient(ellipse at center, black 50%, transparent 100%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at center, black 50%, transparent 100%)",
+              }}
             />
           </div>
         </div>
