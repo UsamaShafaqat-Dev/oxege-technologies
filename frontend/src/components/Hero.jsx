@@ -10,15 +10,24 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-white via-white to-gray-50"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center relative z-10">
-        
         {/* ========================================= */}
         {/* LEFT SIDE: Text Content                     */}
         {/* ========================================= */}
         <div className="lg:w-[50%] text-center lg:text-left pt-6 lg:pt-0 order-2 lg:order-1 z-10">
-          
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-6 shadow-sm bg-[#00A8A8]/10 text-[#00A8A8] border border-[#00A8A8]/20">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
             </svg>
             Innovate. Build. Elevate.
           </div>
@@ -53,24 +62,19 @@ const Hero = () => {
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
         <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end order-1 lg:order-2 w-full relative">
-          
           {/* Container thora bara rakha hai taake design poora show ho */}
           <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-center justify-center lg:translate-x-8">
-            
-            <img 
-                src={gtImage} 
-                alt="Oxege GT Design" 
-                /* Yahan 'mix-blend-multiply' magic class hai jo background hataye bina usay page mein merge kar degi */
-                className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out" 
+            <img
+              src={gtImage}
+              alt="Oxege GT Design"
+              /* 'h-auto' aur 'object-contain' ki jagah 'h-full', 'object-cover' aur 'object-top' lagaya hai taake height bottom se match ho */
+              className="w-full h-full object-cover object-top mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
             />
-            
           </div>
         </div>
-
       </div>
     </div>
   );
 };
 
 export default Hero;
-
