@@ -22,7 +22,7 @@ const TeamSection = () => {
   const isHomePage = location.pathname === "/";
 
   const teamMembers = [
-    { id: 1, name: "Rimsha Khan", role: "CEO", image: ceoImage },
+    { id: 1, name: "Rimsha Khan", role: "CEO & Founder", image: ceoImage },
     {
       id: 2,
       name: "Ahtasham Jatoi",
