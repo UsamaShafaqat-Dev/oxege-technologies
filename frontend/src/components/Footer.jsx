@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Logo import kiya hai (apna logo check kar lena agar .jpg ho toh yahan change kar lena)
+import logoImage from "../assets/logo.jpeg";
+
 const Footer = () => {
   return (
     <footer className="bg-[#001E26] text-gray-300 font-sans border-t-4 border-[#00A8A8]">
@@ -11,48 +14,22 @@ const Footer = () => {
           {/* COLUMN 1: Brand & About                     */}
           {/* ========================================= */}
           <div className="flex flex-col items-center md:items-start">
-            {/* Logo */}
+            {/* ========================================= */}
+            {/* LOGO SECTION (Naya Logo Lagaya Hai)         */}
+            {/* ========================================= */}
             <Link
               to="/"
               className="flex items-center gap-2 mb-6 group inline-flex"
             >
-              <div className="flex items-center justify-center text-[#00A8A8]">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transform group-hover:rotate-12 transition-transform duration-500"
-                >
-                  <path
-                    d="M50 10 C27.9 10 10 27.9 10 50 C10 72.1 27.9 90 50 90 C68.8 90 84.6 77 89 59"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M90 41 C85.6 23 68.8 10 50 10"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeDasharray="10 15"
-                  />
-                  <text
-                    x="50%"
-                    y="54%"
-                    dominantBaseline="middle"
-                    textAnchor="middle"
-                    fill="currentColor"
-                    fontSize="42"
-                    fontWeight="900"
-                    fontFamily="sans-serif"
-                    letterSpacing="-2"
-                  >
-                    GT
-                  </text>
-                </svg>
+              {/* VIP Circular Image Container Footer ke liye */}
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-[#00A8A8]/50 shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center bg-white p-0.5">
+                <img
+                  src={logoImage}
+                  alt="Oxege Technologies Logo"
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
+
               <div className="flex flex-col justify-center">
                 <span className="text-xl font-extrabold text-white leading-none tracking-wide text-left">
                   OXEGE
