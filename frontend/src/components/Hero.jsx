@@ -6,14 +6,17 @@ import gtImage from "../assets/images.png";
 
 const Hero = () => {
   return (
-    <div className="relative w-full overflow-hidden pt-4 pb-16 lg:pt-6 lg:pb-20 font-sans bg-white min-h-[85vh] flex items-center">
+    /* Yahan se overflow-hidden hata diya hai, aur padding perfect kar di hai */
+    <div className="relative w-full pt-10 pb-0 lg:pt-12 lg:pb-0 font-sans bg-white flex items-center">
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-white via-white to-gray-50"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center relative z-10">
+        
         {/* ========================================= */}
         {/* LEFT SIDE: Text Content                     */}
         {/* ========================================= */}
-        <div className="lg:w-[50%] text-center lg:text-left pt-6 lg:pt-0 order-2 lg:order-1 z-10">
+        {/* Yahan sirf 'order-1' rakha hai taake mobile par text pehle (upar) aaye */}
+        <div className="lg:w-[50%] text-center lg:text-left pt-6 lg:pt-0 order-1 z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-6 shadow-sm bg-[#00A8A8]/10 text-[#00A8A8] border border-[#00A8A8]/20">
             <svg
               className="w-3.5 h-3.5"
@@ -61,16 +64,15 @@ const Hero = () => {
         {/* ========================================= */}
         {/* RIGHT SIDE: BLENDED GRAPHIC                 */}
         {/* ========================================= */}
-        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-1 lg:order-2 w-full relative">
-          {/* Main ne yahan translate-y-[40px] lagaya hai taake ye exactly line par baith jaye */}
+        {/* Yahan sirf 'order-2' rakha hai taake mobile par picture neechay jaye */}
+        <div className="lg:w-[50%] mt-12 lg:mt-0 flex justify-center lg:justify-end items-end order-2 w-full relative">
+          
           <div className="relative w-full max-w-[450px] sm:max-w-[550px] lg:max-w-[700px] flex items-end justify-center lg:translate-x-8 translate-y-[20px] lg:translate-y-[40px]">
             <img
               src={gtImage}
               alt="Oxege GT Design"
-              /* h-full hata kar h-auto kar diya taake picture poori apni asli shape mein khule */
               className="w-full h-auto object-contain mix-blend-multiply hover:scale-[1.03] transition-transform duration-700 ease-out"
               style={{
-                /* Yahan 50% ki jagah 75% kar diya hai taake picture neechay se fade/cut na ho! */
                 maskImage:
                   "radial-gradient(ellipse at center, black 75%, transparent 100%)",
                 WebkitMaskImage:

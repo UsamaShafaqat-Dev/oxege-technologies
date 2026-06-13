@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+// Yahan apne logo ka exact naam aur format (.png, .jpg) likhein
+import logoImage from "../assets/logo.jpeg";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -12,57 +15,23 @@ const Navbar = () => {
     <nav className="bg-white sticky top-0 z-50 shadow-sm font-sans relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo Section */}
+          {/* ========================================= */}
+          {/* NEW LOGO SECTION (Circular & Premium)       */}
+          {/* ========================================= */}
           <div className="flex items-center">
             <Link
               to="/"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 group"
             >
-              <div className="flex items-center justify-center text-[#00A8A8]">
-                <svg
-                  width="42"
-                  height="42"
-                  viewBox="0 0 100 100"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="transform group-hover:rotate-12 transition-transform duration-500"
-                >
-                  <path
-                    d="M50 10 C27.9 10 10 27.9 10 50 C10 72.1 27.9 90 50 90 C68.8 90 84.6 77 89 59"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M90 41 C85.6 23 68.8 10 50 10"
-                    stroke="currentColor"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    strokeDasharray="10 15"
-                  />
-                  <text
-                    x="50%"
-                    y="54%"
-                    dominantBaseline="middle"
-                    textAnchor="middle"
-                    fill="currentColor"
-                    fontSize="42"
-                    fontWeight="900"
-                    fontFamily="sans-serif"
-                    letterSpacing="-2"
-                  >
-                    CT
-                  </text>
-                </svg>
-              </div>
-              <div className="flex flex-col justify-center">
-                <span className="text-2xl font-extrabold text-[#0F172A] leading-none tracking-wide">
-                  OXEGE
-                </span>
-                <span className="text-[0.55rem] text-[#00A8A8] font-bold tracking-[0.25em] mt-0.5">
-                  TECHNOLOGIES
-                </span>
+              {/* VIP Circular Image Container */}
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#00A8A8] shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center bg-white p-0.5">
+                <img
+                  src={logoImage}
+                  alt="Oxege Technologies Logo"
+                  /* Agar logo side se kat raha ho toh 'object-cover' ki jagah 'object-contain' kar lijiye ga */
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
             </Link>
           </div>
