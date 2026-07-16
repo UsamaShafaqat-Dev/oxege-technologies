@@ -14,7 +14,9 @@ import nimraImage from "../assets/nimra.png";
 import ahtashamImage from "../assets/ahtasham.jpeg";
 import emanImage from "../assets/eman.jpeg";
 import umarImage from "../assets/umar.png";
-import sumairaImage from "../assets/sumaira.png";
+import laibaImage from "../assets/laiba.jpeg";
+import umerImage from "../assets/umer.png";
+import aliImage from "../assets/ali.png";
 
 const TeamSection = () => {
   // Page check karne ki trick
@@ -31,9 +33,9 @@ const TeamSection = () => {
     },
     {
       id: 3,
-      name: "Sumaira",
-      role: "Head of Department",
-      image: sumairaImage,
+      name: "Laiba",
+      role: "Senior Head of Department",
+      image: laibaImage,
       customPosition: "object-top",
     },
     {
@@ -52,12 +54,24 @@ const TeamSection = () => {
     },
     {
       id: 7,
-      name: "USAMA MERN-STACK",
+      name: "Usama Shafaqat",
       role: "MERN-STACK-DEVELOPER",
       image: usamaImage,
     },
     { id: 8, name: "Iqra Sadiq", role: "Graphic Designer", image: iqraImage },
     { id: 9, name: "Nimra Asghar", role: "Video Editor", image: nimraImage },
+    {
+      id: 10,
+      name: "Muhammad Umer ",
+      role: "Social Media Managing , Video Editing",
+      image: umerImage,
+    },
+        {
+      id: 11,
+      name: "Ali Hassan",
+      role: "UI/UX Designing, Video Editing, Graphic Designing",
+      image: aliImage,
+    },
   ];
 
   return (
