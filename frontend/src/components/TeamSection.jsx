@@ -18,6 +18,7 @@ import irumImage from "../assets/irum.png";
 import sairaImage from "../assets/saira.png";
 import sadiaImage from "../assets/sadia.png";
 import uroojImage from "../assets/urooj.png";
+import roshniImage from "../assets/roshni.png";
 
 const TeamSection = () => {
   const location = useLocation();
@@ -89,21 +90,28 @@ const TeamSection = () => {
       customPosition: "object-top",
     },
     {
-      id: 10,
+      id: 10, 
+      name: "Roshni Ayub",
+      role: "Web Developer & Instructor",
+      image: roshniImage, 
+      customPosition: "object-top" 
+    },
+    {
+      id: 11,
       name: "Sadia Waseem",
       role: "Ai Trainer",
       image: sadiaImage,
       customPosition: "object-top",
     },
     {
-      id: 11,
+      id: 12,
       name: "Saira Chaudhary",
       role: "Leads Generation Specialist",
       image: sairaImage,
       customPosition: "object-top",
     },
     {
-      id: 12,
+      id: 13,
       name: "Nimra Asghar",
       role: "Video Editor",
       image: nimraImage,
