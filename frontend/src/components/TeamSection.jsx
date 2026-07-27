@@ -19,6 +19,10 @@ import sairaImage from "../assets/saira.png";
 import sadiaImage from "../assets/sadia.png";
 import uroojImage from "../assets/urooj.png";
 import roshniImage from "../assets/roshni.png";
+import abdullahImage from "../assets/abdullah.png";
+import mudassirImage from "../assets/mudassir.png";
+import zainImage from "../assets/zain.png";
+import anasImage from "../assets/anas.png";
 
 const TeamSection = () => {
   const location = useLocation();
@@ -116,6 +120,35 @@ const TeamSection = () => {
       role: "Video Editor",
       image: nimraImage,
       customPosition: "object-center",
+    },
+    {
+      id: 14,
+      name: "Abdullah Jameel",
+      role: "Designer & Marketing Manager",
+      image: abdullahImage,
+      customPosition: "object-center",
+    },
+    {
+      id: 15,
+      name: "Mudassir Ali",
+      role: "Youtube Automation",
+      image: mudassirImage,
+      customPosition: "object-top",
+    },
+    {
+      id: 16,
+      name: "Muhammad Zain",
+      role: "Social media manager",
+      image: zainImage,
+      customPosition: "object-top",
+    },
+
+    {
+      id: 17,
+      name: "Muhammad Anas",
+      role: "SEO & CONTENT SPECIALIST",
+      image: anasImage,
+      customPosition: "object-top",
     },
   ];
 
