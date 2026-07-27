@@ -1,35 +1,42 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { useLocation } from "react-router-dom"; // Yeh auto detect karega konsa page hai
+import { useLocation } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
 // Images imports
 import ceoImage from "../assets/ceo.jpeg";
-import iqraImage from "../assets/iqra.jpeg";
 import usamaImage from "../assets/usama.jpg";
 import mariyamImage from "../assets/mariyam.png";
 import nimraImage from "../assets/nimra.png";
-import ahtashamImage from "../assets/ahtasham.jpeg";
-import emanImage from "../assets/eman.jpeg";
-import umarImage from "../assets/umar.png";
+import ahtashamImage from "../assets/ahtasham.png";
 import laibaImage from "../assets/laiba.jpeg";
-import umerImage from "../assets/umer.png";
-import aliImage from "../assets/ali.png";
+import sumairaImage from "../assets/sumaira.png";
+import ramshaImage from "../assets/ramsha.png";
+import irumImage from "../assets/irum.png";
+import sairaImage from "../assets/saira.png";
+import sadiaImage from "../assets/sadia.png";
+import uroojImage from "../assets/urooj.png";
 
 const TeamSection = () => {
-  // Page check karne ki trick
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
   const teamMembers = [
-    { id: 1, name: "Rimsha Khan", role: "CEO & Founder", image: ceoImage },
+    {
+      id: 1,
+      name: "Rimsha Khan",
+      role: "CEO & Founder",
+      image: ceoImage,
+      customPosition: "object-top",
+    },
     {
       id: 2,
       name: "Ahtasham Jatoi",
       role: "Managing Director",
       image: ahtashamImage,
+      customPosition: "object-top",
     },
     {
       id: 3,
@@ -43,34 +50,64 @@ const TeamSection = () => {
       name: "Maryam Liaquat",
       role: "HR Oxege Technologies",
       image: mariyamImage,
+      customPosition: "object-top",
     },
-    { id: 5, name: "Eman Fatima", role: "Admin", image: emanImage },
+    {
+      id: 5,
+      name: "Sumaira",
+      role: "Finance Officer",
+      image: sumairaImage,
+      customPosition: "object-top",
+    },
     {
       id: 6,
-      name: "Umar",
-      role: "Senior App Developer",
-      image: umarImage,
+      name: "Ramsha Safdar",
+      role: "Marketing Head",
+      image: ramshaImage,
       customPosition: "object-top",
     },
     {
       id: 7,
-      name: "Usama Shafaqat",
-      role: "MERN-STACK-DEVELOPER",
-      image: usamaImage,
+      name: "Urooj Nadeem",
+      role: "Coordinator & Manager",
+      image: uroojImage,
+      customPosition: "object-top",
     },
-    { id: 8, name: "Iqra Sadiq", role: "Graphic Designer", image: iqraImage },
-    { id: 9, name: "Nimra Asghar", role: "Video Editor", image: nimraImage },
+
+    {
+      id: 8,
+      name: "Usama Shafaqat",
+      role: "FULL STACK DEVELOPER",
+      image: usamaImage,
+      customPosition: "object-center",
+    },
+    {
+      id: 9,
+      name: "Irum Abid",
+      role: "App Developer",
+      image: irumImage,
+      customPosition: "object-top",
+    },
     {
       id: 10,
-      name: "Muhammad Umer ",
-      role: "Social Media Managing , Video Editing",
-      image: umerImage,
+      name: "Sadia Waseem",
+      role: "Ai Trainer",
+      image: sadiaImage,
+      customPosition: "object-top",
     },
-        {
+    {
       id: 11,
-      name: "Ali Hassan",
-      role: "UI/UX Designing, Video Editing, Graphic Designing",
-      image: aliImage,
+      name: "Saira Chaudhary",
+      role: "Leads Generation Specialist",
+      image: sairaImage,
+      customPosition: "object-top",
+    },
+    {
+      id: 12,
+      name: "Nimra Asghar",
+      role: "Video Editor",
+      image: nimraImage,
+      customPosition: "object-center",
     },
   ];
 
@@ -104,23 +141,18 @@ const TeamSection = () => {
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 4 },
             }}
-            /* pb-20 lagaya taake dots neechay jayen aur cards se na takrayein */
             className="pb-20 pt-4 px-4"
           >
             {teamMembers.map((member) => (
               <SwiperSlide key={member.id} className="py-4">
-                {/* YAHAN CHANGE KIYA HAI: 'h-full' hata kar 'mb-12' lagaya hai taake neechay dots ke liye jagah ban jaye */}
-                <div className="bg-white rounded-[2rem] p-8 mb-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center mx-2">
+                <div className="bg-white rounded-4xl p-8 mb-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center mx-2">
                   <div className="relative w-36 h-36 rounded-full p-1 border-2 border-transparent group-hover:border-[#00A8A8] transition-colors duration-300">
                     <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 flex justify-center items-center">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className={`w-full h-full transform group-hover:scale-110 transition-transform duration-500 ${
-                          member.customPosition
-                            ? `${member.customPosition} object-cover`
-                            : "object-cover"
-                        }`}
+                        // Code fix for Swiper clones styling issue
+                        className={`w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ${member.customPosition}`}
                       />
                     </div>
                   </div>
@@ -144,8 +176,8 @@ const TeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className={`bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center ${
-                  index === 8
+                className={`bg-white rounded-4xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center ${
+                  index === 12
                     ? "lg:col-start-2 lg:col-span-2 lg:max-w-xs mx-auto w-full"
                     : ""
                 }`}
@@ -155,11 +187,7 @@ const TeamSection = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className={`w-full h-full transform group-hover:scale-110 transition-transform duration-500 ${
-                        member.customPosition
-                          ? `${member.customPosition} object-cover`
-                          : "object-cover"
-                      }`}
+                      className={`w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ${member.customPosition}`}
                     />
                   </div>
                 </div>
