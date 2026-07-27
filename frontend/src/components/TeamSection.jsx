@@ -90,11 +90,11 @@ const TeamSection = () => {
       customPosition: "object-top",
     },
     {
-      id: 10, 
+      id: 10,
       name: "Roshni Ayub",
       role: "Web Developer & Instructor",
-      image: roshniImage, 
-      customPosition: "object-top" 
+      image: roshniImage,
+      customPosition: "object-top",
     },
     {
       id: 11,
