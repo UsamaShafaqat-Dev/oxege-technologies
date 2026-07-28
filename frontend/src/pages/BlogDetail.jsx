@@ -13,7 +13,7 @@ const BlogDetail = () => {
       try {
         // Dhyan rakhein: Agar aapka local backend port 5000 par hai toh ye theek hai
         const { data } = await axios.get(
-          `https://oxege-backend.onrender.com/api/blogs`,
+          `https://oxege-backend.onrender.com/api/blogs${id}`,
         );
         setBlog(data);
       } catch (error) {
