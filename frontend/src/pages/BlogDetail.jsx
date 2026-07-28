@@ -71,8 +71,8 @@ const BlogDetail = () => {
           Back to all blogs
         </Link>
 
-        {/* Main Blog Content Container */}
-        <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+        {/* Main Blog Content Container (w-full aur max-w-full add kiya hai) */}
+        <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 w-full max-w-full">
           {/* Header Image */}
           <div className="w-full h-64 md:h-[400px] bg-gray-100">
             <img
@@ -82,7 +82,8 @@ const BlogDetail = () => {
             />
           </div>
 
-          <div className="p-8 md:p-12">
+          {/* Padding container mein overflow-hidden lagaya hai */}
+          <div className="p-8 md:p-12 w-full overflow-hidden">
             {/* Author & Date info */}
             <div className="flex items-center gap-3 text-sm text-[#00A8A8] font-extrabold uppercase tracking-wider mb-6">
               <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
@@ -90,15 +91,15 @@ const BlogDetail = () => {
               <span>{blog.author}</span>
             </div>
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#001E26] mb-10 leading-tight">
+            {/* Title (break-words add kiya hai taake lambe words toot kar neechay aa jayen) */}
+            <h1 className="text-3xl md:text-5xl font-extrabold text-[#001E26] mb-10 leading-tight break-words">
               {blog.title}
             </h1>
 
             {/* Dynamic HTML Content (from React Quill) */}
-            {/* Is class ko thora style diya gaya hai taake Editor ki headings aur lists theek se nazar aayen */}
+            {/* Yahan break-words, w-full, overflow-hidden aur images/paragraphs ko control karne ki sari classes add ki hain */}
             <div
-              className="text-gray-600 text-lg leading-relaxed space-y-6 [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-[#001E26] [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#001E26] [&>ul]:list-disc [&>ul]:ml-5 [&>ol]:list-decimal [&>ol]:ml-5"
+              className="text-gray-600 text-lg leading-relaxed space-y-6 break-words w-full overflow-hidden [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-[#001E26] [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#001E26] [&>ul]:list-disc [&>ul]:ml-5 [&>ol]:list-decimal [&>ol]:ml-5 [&>p]:break-words [&>img]:max-w-full [&>img]:h-auto [&>pre]:whitespace-pre-wrap [&>pre]:break-words"
               dangerouslySetInnerHTML={{ __html: blog.content }}
             ></div>
           </div>
