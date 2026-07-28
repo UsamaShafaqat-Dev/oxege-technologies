@@ -5,7 +5,8 @@ import connectDB from "./config/db.js";
 import inquiryRoutes from "./routes/inquiryRoutes.js";
 import portfolioRoutes from "./routes/portfolioRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
-import serviceRoutes from "./routes/serviceRoutes.js"; // NEW: Services import kiya
+import serviceRoutes from "./routes/serviceRoutes.js";
+import blogRoutes from "./routes/blogRoutes.js";
 
 dotenv.config();
 
@@ -22,7 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/services", serviceRoutes); // NEW: Services route register kiya
+app.use("/api/services", serviceRoutes);
+app.use("/api/blogs", blogRoutes); 
 
 // ==========================================
 // NEW: Contact Form Route for Frontend

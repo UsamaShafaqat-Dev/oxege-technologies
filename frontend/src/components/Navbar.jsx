@@ -62,6 +62,13 @@ const Navbar = () => {
             >
               Portfolio
             </Link>
+            {/* NEW BLOGS LINK ADDED HERE FOR DESKTOP */}
+            <Link
+              to="/blogs"
+              className={`${isActive("/blogs") ? "text-[#00A8A8] font-bold" : "text-[#64748B] font-semibold"} hover:text-[#00A8A8] transition-colors duration-300 text-sm`}
+            >
+              Blogs
+            </Link>
             <Link
               to="/contact"
               className={`${isActive("/contact") ? "text-[#00A8A8] font-bold" : "text-[#64748B] font-semibold"} hover:text-[#00A8A8] transition-colors duration-300 text-sm`}
@@ -171,6 +178,14 @@ const Navbar = () => {
             className={`block px-4 py-3 rounded-xl transition-all duration-300 ${isActive("/portfolio") ? "bg-[#00A8A8]/10 text-[#00A8A8] font-bold" : "text-gray-600 font-medium hover:bg-gray-50 hover:text-[#00A8A8]"}`}
           >
             Portfolio
+          </Link>
+          {/* NEW BLOGS LINK ADDED HERE FOR MOBILE */}
+          <Link
+            to="/blogs"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 rounded-xl transition-all duration-300 ${isActive("/blogs") ? "bg-[#00A8A8]/10 text-[#00A8A8] font-bold" : "text-gray-600 font-medium hover:bg-gray-50 hover:text-[#00A8A8]"}`}
+          >
+            Blogs
           </Link>
           <Link
             to="/contact"

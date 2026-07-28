@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
+// ==========================================
+// IMPORT THE NEW MANAGE BLOGS COMPONENT
+// ==========================================
+import ManageBlogs from "./ManageBlogs";
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("services");
@@ -61,7 +66,9 @@ const AdminDashboard = () => {
   const fetchServices = async () => {
     setLoadingServices(true);
     try {
-      const { data } = await axios.get("https://oxege-backend.onrender.com/api/services");
+      const { data } = await axios.get(
+        "https://oxege-backend.onrender.com/api/services",
+      );
       setServices(data);
     } catch (error) {
       toast.error("Failed to load services!");
@@ -108,9 +115,13 @@ const AdminDashboard = () => {
       } else {
         if (!serviceFormData.image)
           return toast.error("Image is required!", { id: toastId });
-        await axios.post("https://oxege-backend.onrender.com/api/services", data, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.post(
+          "https://oxege-backend.onrender.com/api/services",
+          data,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         toast.success("Service added successfully!", { id: toastId });
       }
       resetServiceForm();
@@ -166,7 +177,9 @@ const AdminDashboard = () => {
   const fetchPortfolios = async () => {
     setLoadingPortfolios(true);
     try {
-      const { data } = await axios.get("https://oxege-backend.onrender.com/api/portfolio");
+      const { data } = await axios.get(
+        "https://oxege-backend.onrender.com/api/portfolio",
+      );
       setPortfolios(data.data);
     } catch (error) {
       toast.error("Failed to load portfolio!");
@@ -233,9 +246,13 @@ const AdminDashboard = () => {
       } else {
         if (!portfolioFormData.image)
           return toast.error("Image required!", { id: toastId });
-        await axios.post("https://oxege-backend.onrender.com/api/portfolio", data, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        await axios.post(
+          "https://oxege-backend.onrender.com/api/portfolio",
+          data,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         toast.success("Project added!", { id: toastId });
       }
       resetPortfolioForm();
@@ -293,9 +310,12 @@ const AdminDashboard = () => {
   const fetchInquiries = async () => {
     setLoadingInquiries(true);
     try {
-      const { data } = await axios.get("https://oxege-backend.onrender.com/api/inquiries", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.get(
+        "https://oxege-backend.onrender.com/api/inquiries",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       setInquiries(data.data);
     } catch (error) {
       toast.error("Failed to load inquiries!");
@@ -369,9 +389,8 @@ const AdminDashboard = () => {
     <div className="min-h-screen bg-[#F8FAFC] font-sans pb-12">
       <Toaster position="top-right" reverseOrder={false} />
 
-      {/* Main Container - Adjusted padding so it flows naturally under the main website navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* PAGE HEADER (OxegeAdmin) - Yeh ab Navbar nahi hai, bas ek normal card hai jo page ke sath scroll hoga */}
+        {/* PAGE HEADER */}
         <div className="w-full bg-white shadow-sm border border-gray-100 px-6 py-5 flex justify-between items-center rounded-2xl mb-8">
           <h1 className="text-xl sm:text-2xl font-extrabold text-[#0F172A]">
             Oxege<span className="text-[#00A8A8]">Admin</span>
@@ -385,7 +404,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* TABS (Responsive) */}
-        <div className="flex flex-wrap justify-start gap-2 sm:gap-4 mb-8 border-b border-gray-200 pb-4">
+        <div className="flex flex-wrap justify-start gap-2 sm:gap-4 mb-8 border-b border-gray-200 pb-4 overflow-x-auto">
           <button
             onClick={() => setActiveTab("services")}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all whitespace-nowrap ${activeTab === "services" ? "bg-[#00A8A8] text-white shadow-md" : "bg-white text-[#64748B] hover:bg-gray-50"}`}
@@ -398,6 +417,15 @@ const AdminDashboard = () => {
           >
             Manage Portfolio
           </button>
+
+          {/* NEW BLOGS TAB */}
+          <button
+            onClick={() => setActiveTab("blogs")}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all whitespace-nowrap ${activeTab === "blogs" ? "bg-[#00A8A8] text-white shadow-md" : "bg-white text-[#64748B] hover:bg-gray-50"}`}
+          >
+            Manage Blogs
+          </button>
+
           <button
             onClick={() => setActiveTab("messages")}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all whitespace-nowrap flex items-center justify-center gap-2 ${activeTab === "messages" ? "bg-[#00A8A8] text-white shadow-md" : "bg-white text-[#64748B] hover:bg-gray-50"}`}
@@ -413,7 +441,7 @@ const AdminDashboard = () => {
           </button>
         </div>
 
-        {/* SERVICES TAB */}
+        {/* DYNAMIC CONTENT RENDERING BASED ON ACTIVE TAB */}
         {activeTab === "services" && (
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -523,7 +551,6 @@ const AdminDashboard = () => {
                       key={service._id}
                       className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-lg transition-all"
                     >
-                      {/* Image matching Portfolio style */}
                       <div className="h-48 w-full bg-gray-100 relative group overflow-hidden">
                         <img
                           src={service.image?.url}
@@ -758,6 +785,11 @@ const AdminDashboard = () => {
             )}
           </div>
         )}
+
+        {/* ========================================== */}
+        {/* MANAGE BLOGS TAB (RENDERED COMPONENT)      */}
+        {/* ========================================== */}
+        {activeTab === "blogs" && <ManageBlogs />}
 
         {/* ========================================== */}
         {/* INQUIRIES TAB */}

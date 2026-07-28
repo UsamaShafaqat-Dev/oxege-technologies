@@ -11,6 +11,9 @@ import PortfolioDetail from "./pages/PortfolioDetail"; // Yeh naya page import k
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import ManageBlogs from './pages/ManageBlogs';
+import Blogs from './pages/Blogs';
+import BlogDetail from './pages/BlogDetail';
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/blogs" element={<ManageBlogs />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
 
             {/* Portfolio Detail ka dynamic route */}
             <Route path="/portfolio/:id" element={<PortfolioDetail />} />

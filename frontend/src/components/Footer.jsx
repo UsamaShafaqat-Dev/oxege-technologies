@@ -148,6 +148,15 @@ const Footer = () => {
                   Portfolio
                 </Link>
               </li>
+              {/* === NEW BLOGS LINK ADDED HERE === */}
+              <li>
+                <Link
+                  to="/blogs"
+                  className="text-gray-400 hover:text-[#00A8A8] text-sm font-medium transition-colors duration-300"
+                >
+                  Blogs
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/contact"
