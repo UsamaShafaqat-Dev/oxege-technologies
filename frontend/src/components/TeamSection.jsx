@@ -105,7 +105,7 @@ const TeamSection = () => {
       name: "Sadia Waseem",
       role: "Ai Trainer",
       image: sadiaImage,
-      customPosition: "object-top",
+      customPosition: "object-[50%_30%]",
     },
     {
       id: 12,
