@@ -141,7 +141,7 @@ const TeamSection = () => {
       name: "Saira Chaudhary",
       role: "Leads Generation Specialist",
       image: sairaImage,
-      customPosition: "object-[50%_30%]",
+      customPosition: "object-[50%_30%] scale-[1.35] group-hover:scale-[1.5]",
     },
     {
       id: 16,
