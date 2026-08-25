@@ -18,7 +18,7 @@ import irumImage from "../assets/irum.png";
 import sairaImage from "../assets/saira.png";
 import sadiaImage from "../assets/sadia.png";
 import uroojImage from "../assets/urooj.png";
-import roshniImage from "../assets/roshni.png";
+import talhaImage from "../assets/talha.png";
 import abdullahImage from "../assets/abdullah.png";
 import mudassirImage from "../assets/mudassir.png";
 import zainImage from "../assets/zain.png";
@@ -29,6 +29,7 @@ const TeamSection = () => {
   const isHomePage = location.pathname === "/";
 
   const teamMembers = [
+    // --- TOP MANAGEMENT ---
     {
       id: 1,
       name: "Rimsha Khan",
@@ -50,105 +51,111 @@ const TeamSection = () => {
       image: laibaImage,
       customPosition: "object-top",
     },
+
+    // --- FINANCE & HR ---
     {
       id: 4,
-      name: "Maryam Liaquat",
-      role: "HR Oxege Technologies",
-      image: mariyamImage,
-      customPosition: "object-top",
-    },
-    {
-      id: 5,
       name: "Sumaira",
       role: "Finance Officer",
       image: sumairaImage,
       customPosition: "object-top",
     },
     {
-      id: 6,
-      name: "Ramsha Safdar",
-      role: "Marketing Head",
-      image: ramshaImage,
+      id: 5,
+      name: "Maryam Liaquat",
+      role: "HR Oxege Technologies",
+      image: mariyamImage,
       customPosition: "object-top",
     },
     {
-      id: 7,
+      id: 6,
       name: "Urooj Nadeem",
       role: "HR & ADMIN MANAGER",
       image: uroojImage,
       customPosition: "object-top",
     },
 
+    // --- TECH & DEVELOPMENT (Usama & Urooj kept together) ---
     {
-      id: 8,
+      id: 7,
       name: "Usama Shafaqat",
       role: "FULL STACK DEVELOPER",
       image: usamaImage,
       customPosition: "object-center",
     },
     {
-      id: 9,
+      id: 8,
       name: "Irum Abid",
       role: "App Developer",
       image: irumImage,
       customPosition: "object-top",
     },
     {
-      id: 10,
-      name: "Roshni Ayub",
-      role: "Web Developer & Instructor",
-      image: roshniImage,
-      customPosition: "object-top",
+      id: 9,
+      name: "Muhammad Ahmed Talha",
+      role: "Cyber Security Specialist",
+      image: talhaImage,
+      customPosition: "object-center",
     },
     {
-      id: 11,
+      id: 10,
       name: "Sadia Waseem",
       role: "Ai Trainer",
       image: sadiaImage,
       customPosition: "object-[50%_30%]",
     },
+
+    // --- MARKETING & SEO ---
     {
-      id: 12,
-      name: "Saira Chaudhary",
-      role: "Leads Generation Specialist",
-      image: sairaImage,
+      id: 11,
+      name: "Ramsha Safdar",
+      role: "Marketing Head",
+      image: ramshaImage,
       customPosition: "object-top",
     },
     {
-      id: 13,
-      name: "Nimra Asghar",
-      role: "Video Editor",
-      image: nimraImage,
-      customPosition: "object-center",
-    },
-    {
-      id: 14,
+      id: 12,
       name: "Abdullah Jameel",
       role: "Designer & Marketing Manager",
       image: abdullahImage,
       customPosition: "object-center",
     },
     {
+      id: 13,
+      name: "Muhammad Anas",
+      role: "SEO & CONTENT SPECIALIST",
+      image: anasImage,
+      customPosition: "object-top",
+    },
+
+    // --- MEDIA, SOCIAL & LEADS ---
+    {
+      id: 14,
+      name: "Muhammad Zain",
+      role: "Social media manager",
+      image: zainImage,
+      customPosition: "object-top",
+    },
+    {
       id: 15,
+      name: "Saira Chaudhary",
+      role: "Leads Generation Specialist",
+      image: sairaImage,
+      customPosition: "object-[50%_30%]",
+    },
+    {
+      id: 16,
       name: "Mudassir Ali",
       role: "Youtube Automation",
       image: mudassirImage,
       customPosition: "object-top",
     },
     {
-      id: 16,
-      name: "Muhammad Zain",
-      role: "Social media manager",
-      image: zainImage,
-      customPosition: "object-top",
-    },
-
-    {
       id: 17,
-      name: "Muhammad Anas",
-      role: "SEO & CONTENT SPECIALIST",
-      image: anasImage,
-      customPosition: "object-top",
+      name: "Nimra Asghar",
+      role: "Video Editor",
+      image: nimraImage,
+      customPosition: "object-center",
     },
   ];
 
@@ -218,7 +225,7 @@ const TeamSection = () => {
               <div
                 key={member.id}
                 className={`bg-white rounded-4xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center ${
-                  index === 12
+                  index === 16 // Fix for 17 members to center the last one
                     ? "lg:col-start-2 lg:col-span-2 lg:max-w-xs mx-auto w-full"
                     : ""
                 }`}
