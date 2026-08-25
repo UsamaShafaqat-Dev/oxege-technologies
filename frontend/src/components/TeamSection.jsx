@@ -206,7 +206,7 @@ const TeamSection = () => {
                       />
                     </div>
                   </div>
-                  <div className="mt-6 text-center flex-grow flex flex-col justify-center">
+                  <div className="mt-6 text-center min-h-[130px] flex-grow flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-[#0F172A] mb-1 group-hover:text-[#00A8A8] transition-colors duration-300">
                       {member.name}
                     </h3>
