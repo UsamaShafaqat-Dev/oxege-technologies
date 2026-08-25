@@ -74,7 +74,7 @@ const TeamSection = () => {
     {
       id: 7,
       name: "Urooj Nadeem",
-      role: "Coordinator & Manager",
+      role: "HR & ADMIN MANAGER",
       image: uroojImage,
       customPosition: "object-top",
     },
