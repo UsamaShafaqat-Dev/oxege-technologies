@@ -192,9 +192,11 @@ const TeamSection = () => {
             className="pb-20 pt-4 px-4"
           >
             {teamMembers.map((member) => (
-              <SwiperSlide key={member.id} className="py-4">
-                <div className="bg-white rounded-4xl p-8 mb-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center mx-2">
-                  <div className="relative w-36 h-36 rounded-full p-1 border-2 border-transparent group-hover:border-[#00A8A8] transition-colors duration-300">
+              // FIX 1: SwiperSlide ko h-auto de diya taake box adjust ho
+              <SwiperSlide key={member.id} className="py-4 h-auto">
+                {/* FIX 2: h-full add kar diya taake sab cards equal lambai ke hon */}
+                <div className="h-full bg-white rounded-4xl p-8 mb-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center mx-2">
+                  <div className="relative w-36 h-36 rounded-full p-1 border-2 border-transparent group-hover:border-[#00A8A8] transition-colors duration-300 flex-shrink-0">
                     <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 flex justify-center items-center">
                       <img
                         src={member.image}
@@ -204,7 +206,7 @@ const TeamSection = () => {
                       />
                     </div>
                   </div>
-                  <div className="mt-6 text-center">
+                  <div className="mt-6 text-center flex-grow flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-[#0F172A] mb-1 group-hover:text-[#00A8A8] transition-colors duration-300">
                       {member.name}
                     </h3>
@@ -220,17 +222,17 @@ const TeamSection = () => {
           /* ========================================= */
           /* ABOUT PAGE GRID (Old Design)              */
           /* ========================================= */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 justify-center items-stretch">
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className={`bg-white rounded-4xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center ${
+                className={`h-full bg-white rounded-4xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,168,168,0.15)] transition-all duration-300 group flex flex-col items-center ${
                   index === 16 // Fix for 17 members to center the last one
                     ? "lg:col-start-2 lg:col-span-2 lg:max-w-xs mx-auto w-full"
                     : ""
                 }`}
               >
-                <div className="mt-8 relative w-36 h-36 rounded-full p-1 border-2 border-transparent group-hover:border-[#00A8A8] transition-colors duration-300">
+                <div className="mt-8 relative w-36 h-36 rounded-full p-1 border-2 border-transparent group-hover:border-[#00A8A8] transition-colors duration-300 flex-shrink-0">
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 flex justify-center items-center">
                     <img
                       src={member.image}
@@ -239,7 +241,7 @@ const TeamSection = () => {
                     />
                   </div>
                 </div>
-                <div className="p-6 text-center w-full">
+                <div className="p-6 text-center w-full flex-grow flex flex-col justify-center">
                   <h3 className="text-xl font-bold text-[#0F172A] mb-1 group-hover:text-[#00A8A8] transition-colors duration-300">
                     {member.name}
                   </h3>
