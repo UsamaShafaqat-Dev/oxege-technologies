@@ -17,7 +17,7 @@ import ramshaImage from "../assets/ramsha.png";
 import irumImage from "../assets/irum.png";
 import sairaImage from "../assets/saira.png";
 import sadiaImage from "../assets/sadia.png";
-import uroojImage from "../assets/urooj.png";
+import abdulRasheedImage from "../assets/AbdulRasheed.png";
 import talhaImage from "../assets/talha.png";
 import abdullahImage from "../assets/abdullah.png";
 import mudassirImage from "../assets/mudassir.png";
@@ -69,8 +69,8 @@ const TeamSection = () => {
     },
     {
       id: 6,
-      name: "Urooj Nadeem",
-      role: "HR & ADMIN MANAGER",
+      name: "Abdul Rasheed",
+      role: "Web instructor",
       image: uroojImage,
       customPosition: "object-top",
     },
