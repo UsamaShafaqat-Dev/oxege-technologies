@@ -71,7 +71,7 @@ const TeamSection = () => {
       id: 6,
       name: "Abdul Rasheed",
       role: "Web instructor",
-      image: uroojImage,
+      image: abdulRasheedImage,
       customPosition: "object-top",
     },
 
